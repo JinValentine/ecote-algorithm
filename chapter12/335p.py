@@ -22,9 +22,9 @@ def solution(n, weak, dist):
             count = 1 # 투입할 친구의 수
             # 해당 친구가 점검할 수 있는 마지막 위치
             position = weak[start] + friends[count - 1]
-            # 시작점부터 모든 취약 지점을 확인
+            # 시작점부터 한 사이클 범위 중 모든 취약 지점을 확인
             for index in range(start, start + length):
-            # 점검할수 있는 위치를 벗어나는 경우
+            # 취약지점마다 현재 친구 수로는 도달하지 못하는 경우
                 if position < weak[index]:
                     count += 1 # 새로운 친구를 투입
                     if count > len(dist): # 더 투입이 불가능하다면 종료
